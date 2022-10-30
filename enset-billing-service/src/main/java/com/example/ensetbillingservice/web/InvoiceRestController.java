@@ -4,6 +4,8 @@ import com.example.ensetbillingservice.dto.InvoiceRequestDTO;
 import com.example.ensetbillingservice.dto.InvoiceResponseDTO;
 import com.example.ensetbillingservice.service.InvoiceService;
 import com.example.ensetbillingservice.service.InvoiceServiceImpl;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,5 +36,9 @@ public class InvoiceRestController {
     @GetMapping("/invoices")
     public List<InvoiceResponseDTO> allInvoices(){
         return invoiceService.allInvoives();
+    }
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<String> exceptionHandler(Exception e){
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
