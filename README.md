@@ -7,11 +7,11 @@ Structure du projet :
 
 Etape 1 : Création du projet Customer-Service :
 
-Dans ce projet nous avons créée plusieurs packages et des classes notamment :
+  Dans ce projet nous avons créée plusieurs packages et des classes notamment :
   	
-    La classe Customer dans le package entité :
+   La classe Customer dans le package entité
     
-    La classe CustomerRepository dans le package repositories 
+   La classe CustomerRepository dans le package repositories 
    
    Les classes CustomerResponseDTO et CustomerRequestDTO dans le package DTO.
 	
@@ -20,5 +20,7 @@ Dans ce projet nous avons créée plusieurs packages et des classes notamment :
    La classe CustomerMapper dans le package Mapper.
 
 Et maintenant nous allons ajouter 2 clients pour tester :
+
+![image](https://user-images.githubusercontent.com/85801662/198897480-052330cd-afb4-4183-96e2-4fa8f7705d1e.png)
 
 
