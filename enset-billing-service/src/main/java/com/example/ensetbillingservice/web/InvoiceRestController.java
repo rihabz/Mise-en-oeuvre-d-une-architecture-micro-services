@@ -21,12 +21,18 @@ public class InvoiceRestController {
         return invoiceService.getInvoice(invoiceId);
     }
 
-    @GetMapping("/invoices/{customerId}")
+    @GetMapping("/invoicesByCustomer/{customerId}")
     public List<InvoiceResponseDTO> getInvoicesByCustomer(@PathVariable String customerId){
         return invoiceService.invoivesByCustomer(customerId);
     }
     @PostMapping(path = "/invoices")
     public InvoiceResponseDTO save(@RequestBody InvoiceRequestDTO invoiceRequestDTO){
         return invoiceService.save(invoiceRequestDTO);
+    }
+
+
+    @GetMapping("/invoices")
+    public List<InvoiceResponseDTO> allInvoices(){
+        return invoiceService.allInvoives();
     }
 }

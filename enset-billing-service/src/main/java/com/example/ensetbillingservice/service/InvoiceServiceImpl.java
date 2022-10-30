@@ -40,8 +40,10 @@ public class InvoiceServiceImpl implements InvoiceService {
     @Override
     public InvoiceResponseDTO getInvoice(String invoiceId) {
         Invoice invoice=invoiceRepository.findById(invoiceId).get();
-        Customer customer=customerRestClient.getCustomer(invoice.getCustomerId());
-        invoice.setCustomer(customer);
+        if(invoice.getCustomerId()!=null){
+            Customer customer=customerRestClient.getCustomer(invoice.getCustomerId());
+            invoice.setCustomer(customer);
+        }
         return invoiceMapper.fromInvoice(invoice);
     }
 
@@ -49,9 +51,31 @@ public class InvoiceServiceImpl implements InvoiceService {
     public List<InvoiceResponseDTO> invoivesByCustomer(String customerId) {
         List<Invoice> invoices=invoiceRepository.
                 findByCustomerId(customerId);
+        for (Invoice invoice: invoices){
+            if(invoice.getCustomerId()!=null){
+                Customer customer=customerRestClient.getCustomer(invoice.getCustomerId());
+                invoice.setCustomer(customer);
+            }
+
+        }
         return invoices.stream().
                 map(invoice -> invoiceMapper.
                         fromInvoice(invoice)).
                 collect(Collectors.toList());
+    }
+
+    @Override
+    public List<InvoiceResponseDTO> allInvoives() {
+        List<Invoice> invoices=invoiceRepository.findAll();
+        for (Invoice invoice: invoices){
+            if(invoice.getCustomerId()!=null){
+                Customer customer=customerRestClient.getCustomer(invoice.getCustomerId());
+                invoice.setCustomer(customer);
+            }
+
+        }
+        return invoices.stream().map(
+                inv->invoiceMapper.fromInvoice(inv))
+                .collect(Collectors.toList());
     }
 }
