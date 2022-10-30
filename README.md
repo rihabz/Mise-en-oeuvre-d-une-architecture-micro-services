@@ -2,15 +2,16 @@
 
 Structure du projet :
 
-[image](https://user-images.githubusercontent.com/85801662/198897037-f0435bdd-c456-4ae2-a218-edb23d19b6f1.png)
+![Capture d’écran 2022-10-30 201837](https://user-images.githubusercontent.com/85801662/198897415-2405e7fa-93d2-40d8-94b3-9101d12b55e4.jpg)
 
-==Etape 1 : Création du projet Customer-Service :
+
+Etape 1 : Création du projet Customer-Service :
 
 Dans ce projet nous avons créée plusieurs packages et des classes notamment :
   	
     La classe Customer dans le package entité :
     
-   	La classe CustomerRepository dans le package repositories 
+    La classe CustomerRepository dans le package repositories 
    
    Les classes CustomerResponseDTO et CustomerRequestDTO dans le package DTO.
 	
