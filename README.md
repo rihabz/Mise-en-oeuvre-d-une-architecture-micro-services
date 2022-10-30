@@ -1,11 +1,11 @@
-# Mise-en-oeuvre-d-une-architecture-micro-services!
+# Mise-en-oeuvre-d-une-architecture-micro-services
 
 Structure du projet :
 
 ![Capture d’écran 2022-10-30 201837](https://user-images.githubusercontent.com/85801662/198897415-2405e7fa-93d2-40d8-94b3-9101d12b55e4.jpg)
 
 
-# Etape 1 : Création du projet Customer-Service :!
+# Etape 1 : Création du projet Customer-Service :
 
   Dans ce projet nous avons créée plusieurs packages et des classes notamment :
   	
@@ -42,7 +42,7 @@ Swagger :
 
  
  
-#Etape 2 : création du projet Billing service
+# Etape 2 : création du projet Billing service
 
 -Nous allons suivre les mêmes étapes que le projet précédent sauf que nous allons ajouter la dépendance openFeign pour qu’il puisse communiquer avec l’autre micro-service Customer-Service.
  
@@ -59,7 +59,7 @@ Testons maintenant notre projet :
 ![image](https://user-images.githubusercontent.com/85801662/198897685-d83fa4c6-2619-48b5-b66a-f5dd9a2597b5.png)
 
 
-#Etape 3 : la création du projet adria-Eureka-service
+# Etape 3 : la création du projet adria-Eureka-service
 
 On ajoute l’annotation dans la classe main :
  
@@ -88,7 +88,7 @@ Les Factures d’un client :
 ![image](https://user-images.githubusercontent.com/85801662/198897793-005f9c3a-bf63-42a2-9533-5baf8a18eee7.png)
 
  
-#Etape 4 :la création de la Gateway :
+# Etape 4 :la création de la Gateway :
  
 ![image](https://user-images.githubusercontent.com/85801662/198897865-4364ff95-df9e-420b-99cf-23668c0de94a.png)
 
